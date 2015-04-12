@@ -11,6 +11,7 @@
     'ui.bootstrap',
     'ngMaterial',
     'ngAria',
+    'ngResource',
     'angulartics',
     'angulartics.google.analytics'
 
@@ -38,11 +39,17 @@
               templateUrl: 'app/home/home.view.html',
               controller: 'HomeCtrl as vm'
             }
+          }
+        })
+        .state('home.reports', {
+          url: '/reports/:type',
 
-            //// footer view
-            //'footer@': {
-            //  templateUrl: "/app/components/footer/footer.view.html"
-            //}
+          views: {
+
+            '@': {
+              templateUrl: 'app/reports/reports.view.html',
+              controller: 'ReportCtrl as vm'
+            }
           }
         })
     }]);

@@ -1,6 +1,7 @@
 var multer = require('multer');
 var bodyParser = require('body-parser'),
-    path = require('path');
+    path = require('path'),
+    query_controller = require('../controllers/index');
 
 module.exports = function (app) {
 
@@ -12,6 +13,9 @@ module.exports = function (app) {
     res.setHeader('Content-Type', 'text/html');
     res.sendfile(path.resolve('index.html') );
   });
+
+  app.route('/api/tools')
+    .get(query_controller.getTools)
     //.get(articles.list)
     //.post(articles.create);
     //

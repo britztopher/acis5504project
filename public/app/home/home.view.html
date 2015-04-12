@@ -1,5 +1,26 @@
-<div>
-    Hello Worlds!!
-    <br/>
-    {{vm.helloSpanish}}
+<div layout="row" layout-align="center center">
+    <div>
+        <h1 class="center">Welcome to Shop Finder</h1>
+
+        <p>
+            Shop Finder allows you to find shops that can cater to your needs. Whether it be an auto shop or a
+            woodworking shop ShopFinder has got you covered
+        </p>
+    </div>
+</div>
+<div layout="column">
+    <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex center">Reports</h2>
+        </div>
+    </md-toolbar>
+    <md-card>
+        <md-card-content>
+            <div layout="row">
+                <md-button ng-click="vm.getTools()" class="md-primary md-raised">
+                    Get Tools
+                </md-button>
+            </div>
+        </md-card-content>
+    </md-card>
 </div>
