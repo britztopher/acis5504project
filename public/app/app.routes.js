@@ -18,7 +18,7 @@
   ])
     .config(function ($mdThemingProvider) {
       $mdThemingProvider.theme('default')
-        .primaryPalette('grey', {
+        .primaryPalette('light-blue', {
           'default': '300'
         })
         .accentPalette('deep-orange', {
@@ -41,14 +41,67 @@
             }
           }
         })
-        .state('home.reports', {
-          url: '/reports/:type',
+        .state('home.findtools', {
+          url: 'findtools',
 
           views: {
 
-            '@': {
-              templateUrl: 'app/reports/reports.view.html',
-              controller: 'ReportCtrl as vm'
+            'reports@home': {
+              templateUrl: 'app/tools/find_tools/find_tools.view.html',
+              controller: 'FindToolCtrl as vm'
+            }
+          }
+        }).state('home.toollist', {
+          url: 'toollist',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/tools/list/tools_list.view.html',
+              controller: 'ToolListCtrl as vm'
+            }
+          }
+        })
+        .state('home.createTool', {
+          url: 'toolcreate',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/tools/create/tool_create.view.html',
+              controller: 'ToolCreateCtrl as vm'
+            }
+          }
+        })
+        .state('home.tooledit', {
+          url: 'tooledit/:tool',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/tools/edit/tool_edit.view.html',
+              controller: 'ToolEditCtrl as vm'
+            }
+          }
+        })
+        .state('home.findwood', {
+          url: 'findwood',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/wood/find_wood/find_wood.view.html',
+              controller: 'FindWoodCtrl as vm'
+            }
+          }
+        }).state('home.woodlist', {
+          url: 'woodlist',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/wood/list/wood_list.view.html',
+              controller: 'WoodListCtrl as vm'
             }
           }
         })

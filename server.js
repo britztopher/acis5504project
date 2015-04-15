@@ -90,33 +90,10 @@ var SampleApp = function() {
     /*  ================================================================  */
 
     /**
-     *  Create the routing table entries + handlers for the application.
-     */
-    self.createRoutes = function() {
-
-
-        self.routes = { };
-
-        self.routes['/asciimo'] = function(req, res) {
-            var link = "http://i.imgur.com/kmbjB.png";
-            res.send("<html><body><img src='" + link + "'></body></html>");
-        };
-
-        self.routes['/'] = function(req, res) {
-            res.setHeader('Content-Type', 'text/html');
-            res.send(self.cache_get('index.html') );
-        };
-
-
-    };
-
-
-    /**
      *  Initialize the server (express) and create the routes and register
      *  the handlers.
      */
     self.initializeServer = function() {
-        self.createRoutes();
         self.app = express();
 
         // Setting the app router and static folder

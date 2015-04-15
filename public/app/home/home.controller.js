@@ -4,21 +4,34 @@
 
   angular.module('myApp.controllers')
 
-    .controller('HomeCtrl', function (Home) {
+    .controller('HomeCtrl', function (Home, menu) {
 
       var vm = this;
 
-      vm.getTools = getTools;
+      //functions for menu-link and menu-toggle
+      vm.isOpen = isOpen;
+      vm.toggleOpen = toggleOpen;
+      vm.autoFocusContent = false;
+      vm.menu = menu;
 
-      function getTools() {
-        var tools = Home.query(function () {
-          console.log('TOols', tools);
-        });
+      vm.status = {
+        isFirstOpen: true,
+        isFirstDisabled: false
       };
+
+
+      function isOpen(section) {
+        return menu.isSectionSelected(section);
+      }
+
+      function toggleOpen(section) {
+        menu.toggleSelectSection(section);
+      }
 
       vm.helloSpanish = "Buenos Dias!"
 
-    });
+    })
+
 
 })();
 

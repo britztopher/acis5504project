@@ -4,9 +4,10 @@
 
   angular.module('myApp.controllers')
 
-    .controller('ReportCtrl', function(Home){
+    .controller('ReportCtrl', function(Report){
 
       var vm = this;
+
 
 
     });
