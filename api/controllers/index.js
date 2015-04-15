@@ -8,7 +8,7 @@ var _ = require('lodash'),
 exports.getTools = function (req, res) {
   db_pool.getConnection(function (err, connection) {
     // Use the connection
-    connection.query('SELECT *  FROM tool, location where tool.location_id=location.location_id', function (err, rows) {
+    connection.query('SELECT *  FROM TOOL, LOCATION where TOOL.LOCATION_ID=LOCATION.LOCATION_ID', function (err, rows) {
 
       if (err) {
         throw err
