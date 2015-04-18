@@ -103,7 +103,7 @@ exports.getWoodById = function (req, res) {
 exports.getWood = function (req, res) {
   db_pool.getConnection(function (err, connection) {
     // Use the connection
-    connection.query('SELECT *  FROM WOOD, LOCATION, WOOD_TYPE, ' +
+    connection.query('SELECT *  FROM WOOD, LOCATION, WOOD_TYPE ' +
     'WHERE WOOD.LOCATION_ID = LOCATION.LOCATION_ID ' +
     'AND WOOD.WOOD_TYPE_ID = WOOD_TYPE.WOOD_TYPE_ID', function (err, rows) {
 
