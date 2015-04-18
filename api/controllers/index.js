@@ -35,7 +35,7 @@ exports.getTools = function (req, res) {
   db_pool.getConnection(function (err, connection) {
 
     // Use the connection
-    connection.query('SELECT *  FROM TOOL, LOCATION where TOOL.LOCATION_ID=LOCATION.LOCATION_ID',
+    connection.query('SELECT *  FROM TOOL, LOCATION WHERE TOOL.LOCATION_ID=LOCATION.LOCATION_ID',
       function (err, rows) {
 
         if (err) {
@@ -103,9 +103,9 @@ exports.getWoodById = function (req, res) {
 exports.getWood = function (req, res) {
   db_pool.getConnection(function (err, connection) {
     // Use the connection
-    connection.query('SELECT *  FROM wood, location, wood_type ' +
-    'where wood.location_id=location.location_id ' +
-    'and wood.wood_type_id = wood_type.wood_type_id', function (err, rows) {
+    connection.query('SELECT *  FROM WOOD, LOCATION, WOOD_TYPE, ' +
+    'WHERE WOOD.LOCATION_ID = LOCATION.LOCATION_ID ' +
+    'AND WOOD.WOOD_TYPE_ID = WOOD_TYPE.WOOD_TYPE_ID', function (err, rows) {
 
       if (err) {
         throw err
@@ -184,9 +184,9 @@ exports.createTool = function (req, res) {
 exports.updateTool = function (req, res) {
   db_pool.getConnection(function (err, connection) {
     // Use the connection
-    connection.query('update tool set TOOL_NAME = ?, ' +
+    connection.query('UPDATE TOOL SET TOOL_NAME = ?, ' +
     'TOOL_DESC = ? ' +
-    'where TOOL_ID = ?', [req.body.tool.TOOL_NAME, req.body.tool.TOOL_DESC, req.body.tool.TOOL_ID], function (err, rows) {
+    'WHERE TOOL_ID = ?', [req.body.tool.TOOL_NAME, req.body.tool.TOOL_DESC, req.body.tool.TOOL_ID], function (err, rows) {
 
       if (err) {
         throw err
@@ -232,7 +232,7 @@ exports.getLocations = function (req, res) {
 
   db_pool.getConnection(function (err, connection) {
     // Use the connection
-    connection.query('SELECT *  FROM location', function (err, rows) {
+    connection.query('SELECT *  FROM LOCATION', function (err, rows) {
 
       if (err) {
         throw err
@@ -255,7 +255,8 @@ exports.getWoodTypes = function (req, res) {
 
 
     // Use the connection
-    connection.query('SELECT wood_type FROM wood_type', function (err, rows) {
+    connection.query('SELECT WOOD_TYPE FROM WOOD_TYPE'
+      , function (err, rows) {
 
       if (err) {
         throw err
