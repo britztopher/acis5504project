@@ -10,7 +10,7 @@
       var vm = this;
 
       vm.woodtype = WoodType.query(function(){
-        console.log('message: ', vm.woodtype);
+        console.log('wood types: ', vm.woodtype);
       });
 
       vm.selected = undefined;

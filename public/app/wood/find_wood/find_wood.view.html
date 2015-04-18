@@ -10,7 +10,7 @@
         <h3>Start Typing to Select a Type of Wood from Inventory</h3>
 
         <input id="tool-typeahead" type="text" ng-model="vm.selectedWood"
-               typeahead="woodtype.wood_type for woodtype in vm.woodtype | filter:$viewValue  | limitTo:8" class="form-control"
+               typeahead="woodtype.WOOD_TYPE for woodtype in vm.woodtype | filter:$viewValue  | limitTo:8" class="form-control"
                typeahead-on-select="vm.onSelect($item, $model, $label)">
     </div>
 </div>
