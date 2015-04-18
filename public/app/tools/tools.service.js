@@ -6,7 +6,10 @@
 
     .factory('Tools', ['$resource', function($resource){
 
-     return $resource('/api/tools/:id',
+     return $resource('/api/tools/:id', {isArray: true},
+       {
+         id: '@id'
+       },
        {
          updateTools: {
            url: '/api/tools/update',

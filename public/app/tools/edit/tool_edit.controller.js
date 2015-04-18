@@ -4,34 +4,40 @@
 
   angular.module('myApp.controllers')
 
-    .controller('ToolEditCtrl', function (Tools, Tool, $http) {
+    .controller('ToolEditCtrl', function (Tools, Tool, $http, $state) {
 
       var vm = this;
 
       vm.toolTypes = ['Power Tool', 'Hand Tool'];
 
-      vm.tool = Tool.getTool();
-
-      //vm.Tool = Tools.get({id: vm.tool.TOOL_ID}, function(){
-      //  console.log('got tool: ', vm.Tool);
-      //});
-
-      //vm.tool.location = vm.tool.LOCATI ON_NAME
+      vm.tool = Tools.get({id: $state.params.id})
 
       console.log('Tool on Deck: ', vm.tool);
       vm.updateTool = updateTool;
+      vm.deleteTool = deleteTool;
 
+      function deleteTool(){
+
+          console.log('got tool: ', vm.tool);
+
+        $http.delete('/api/tools/delete/'+vm.tool.TOOL_ID)
+          .success(function(response){
+            console.log('response: ', response);
+            $state.go('home.toollist');
+          })
+
+      }
 
       function updateTool(){
-        vm.tool.SHOP_ID = 1;
 
         $http.post('/api/tools/update', {tool: vm.tool})
           .success(function(resp){
             console.log('tool respo: ', resp);
+            $state.go('home.toollist');
           })
 
       }
-      
+
 
     });
 

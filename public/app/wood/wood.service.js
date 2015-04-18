@@ -7,13 +7,11 @@
     .factory('Wood', ['$resource', function ($resource) {
 
       return $resource('/api/wood/:id',
-        {isArray: true},
         {
-          woodbytype: {
-            method: 'GET',
-            url: 'api/wood/:type',
-            isArray: true
-          }
+          id: '@id'
+        },
+        {
+          woodbytype: {method: 'GET', url: '/api/wood/:type', isArray: true}
         });
 
 

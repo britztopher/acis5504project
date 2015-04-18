@@ -41,6 +41,16 @@
             }
           }
         })
+        .state('home.tool', {
+          url: 'tool',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/tools/tools.view.html'
+            }
+          }
+        })
         .state('home.findtools', {
           url: 'findtools',
 
@@ -74,7 +84,7 @@
           }
         })
         .state('home.tooledit', {
-          url: 'tooledit/:tool',
+          url: 'tooledit/:id',
 
           views: {
 
@@ -102,6 +112,16 @@
             'reports@home': {
               templateUrl: 'app/wood/list/wood_list.view.html',
               controller: 'WoodListCtrl as vm'
+            }
+          }
+        }).state('home.woodedit', {
+          url: '/woodedit/:id',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/wood/edit/wood_edit.view.html',
+              controller: 'WoodEditCtrl as vm'
             }
           }
         })

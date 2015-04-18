@@ -4,7 +4,7 @@
 
   angular.module('myApp.controllers')
 
-    .controller('ToolCreateCtrl', function ($log, Tools, Location) {
+    .controller('ToolCreateCtrl', function ($log, Tools, Location, $state) {
 
       var vm = this;
 
@@ -43,10 +43,6 @@
         }
       }
 
-      function setLocation(selected) {
-
-        console.log('message: ', selected);
-      }
 
       function searchTextChange(text) {
         $log.info('Text changed to ' + text);
@@ -61,6 +57,7 @@
 
       function saveTool(){
         vm.newTool.$save();
+        $state.go('home.toollist');
       }
       /**
        * Create filter function for a query string

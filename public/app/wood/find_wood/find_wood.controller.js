@@ -20,11 +20,17 @@
 
       function onSelect($item, $model, $label){
 
-        console.log('selected model: ', $model);
+        console.log('selected model: ', Wood);
 
-        vm.woods = Wood.woodbytype({type: $model}, function(){
-          console.log('woods: ', vm.woods);
-        });
+        $http.get('/api/wood/type/'+$model)
+          .success(function(response){
+            console.log('wood by type resp: ', response);
+              vm.woods = response;
+          })
+          .error(function(reason){
+            console.log('COULD NOT GET WOOD BY TYPE: ', reason);
+          });
+
       }
     }]);
 

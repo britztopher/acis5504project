@@ -20,8 +20,14 @@ module.exports = function (app, db_pool) {
     .get(query_controller.getTools)
     .post(query_controller.createTool);
 
+  app.route('/api/tools/:id')
+    .get(query_controller.getToolById);
+
   app.route('/api/tools/update')
     .post(query_controller.updateTool);
+
+  app.route('/api/tools/delete/:id')
+    .delete(query_controller.deleteTool);
 
   app.route('/api/locations')
     .get(query_controller.getLocations);
@@ -29,11 +35,18 @@ module.exports = function (app, db_pool) {
   app.route('/api/wood')
     .get(query_controller.getWood);
 
+  app.route('/api/wood/:id')
+    .get(query_controller.getWoodById);
+
+  app.route('/api/wood/update')
+    .post(query_controller.updateWood);
+
   app.route('/api/woodtype')
     .get(query_controller.getWoodTypes);
 
-  app.route('/api/wood/:type')
+  app.route('/api/wood/type/:type')
     .get(query_controller.getWoodByType);
+
 
     //
   //// Single article routes

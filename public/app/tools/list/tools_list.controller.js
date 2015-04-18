@@ -16,9 +16,7 @@
 
       function edit(tool){
 
-        Tool.setTool(tool);
-
-        $state.go('home.tooledit');
+        $state.go('home.tooledit', {id: tool.TOOL_ID});
       }
 
 

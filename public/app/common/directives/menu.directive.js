@@ -106,7 +106,7 @@
               name: 'Add Tool',
               state: 'home.createTool',
               type: 'link',
-              icon: 'fa fa-spinner'
+              icon: 'fa fa-plus'
             }]
         });
 
@@ -123,38 +123,15 @@
             state: 'home.woodlist',
             type: 'link',
             icon: 'fa fa-map-marker'
-          }
-            //  {
-            //  name: 'Add Tool',
-            //  state: 'home.createTool',
-            //  type: 'link',
-            //  icon: 'fa fa-spinner'
-            //}
-          ]
-        });
-
-        sections.push({
-          name: 'Reports',
-          type: 'toggle',
-          pages: [{
-            name: 'Find All Report',
-            type: 'link',
-            state: 'home.findallreport',
-            icon: 'fa fa-group'
-          }, {
-            name: 'Wood List',
-            state: 'home.woodlist',
+          },
+          {
+          name: 'Low Quantity Wood Report',
+            state: 'home.lowquantityreport',
             type: 'link',
             icon: 'fa fa-map-marker'
-          }
-            //  {
-            //  name: 'Add Tool',
-            //  state: 'home.createTool',
-            //  type: 'link',
-            //  icon: 'fa fa-spinner'
-            //}
-          ]
+           }]
         });
+
         var self;
 
         return self = {

@@ -20,7 +20,7 @@
             <td>LOCATION</td>
             </thead>
             <tbody>
-            <tr ng-repeat="wood in vm.wood">
+            <tr ng-repeat="wood in vm.wood" ng-click="vm.edit(wood)">
                 <td>{{wood.WOOD_ID}}</td>
                 <td>{{wood.WOOD_TYPE}}</td>
                 <td>{{wood.WOOD_LENGTH}}</td>

@@ -8,7 +8,7 @@ var MysqlDB = function(){
         port: process.env.AWS_MYSQL_PORT || '3306',
         user: process.env.AWS_MYSQL_USER || 'root',
         password: process.env.AWS_MYSQL_PW || 'root',
-        socketPath: '/var/lib/mysql/mysql.sock',
+        socketPath: process.env.AWS_MYSQL_SOCKETPATH  || '/Applications/MAMP/tmp/mysql/mysql.sock',
         dateStrings: true
     });
 
