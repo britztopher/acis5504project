@@ -273,3 +273,29 @@ exports.getWoodTypes = function (req, res) {
   });
 }
 
+exports.lowQuantityReport= function (req, res) {
+  
+  db_pool.getConnection(function (err, connection) {
+
+    // Use the connection
+    connection.query('SELECT WOOD_TYPE.WOOD_TYPE, WOOD.WOOD_LENGTH, WOOD.WOOD_WIDTH, WOOD.WOOD_THICKNESS, WOOD.WOOD_QUANTITY ' +
+    'FROM WOOD, WOOD_TYPE ' +
+    'WHERE  WOOD.WOOD_TYPE_ID = WOOD_TYPE.WOOD_TYPE_ID ' +
+    'AND WOOD.WOOD_QUANTITY < 3'
+      , function (err, rows) {
+
+      if (err) {
+        throw err
+      }
+
+      res.send(rows)
+      // And done with the connection.
+      connection.release();
+
+      // Don't use the connection here, it has been returned to the pool.
+    });
+
+    //logger.info("MIGRATION SERVER SIDE COMMENCE!!");
+  });
+}
+

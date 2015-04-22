@@ -124,6 +124,16 @@
               controller: 'WoodEditCtrl as vm'
             }
           }
+        }).state('home.woodlow', {
+          url: '/woodlowquantity',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/wood/lowreport/wood_low.view.html',
+              controller: 'WoodLowCtrl as vm'
+            }
+          }
         })
     }]);
 

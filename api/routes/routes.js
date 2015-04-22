@@ -47,6 +47,10 @@ module.exports = function (app, db_pool) {
   app.route('/api/wood/type/:type')
     .get(query_controller.getWoodByType);
 
+  app.route('/api/wood/quantity/low')
+    .get(query_controller.lowQuantityReport);
+
+
 
     //
   //// Single article routes

@@ -126,7 +126,7 @@
           },
           {
           name: 'Low Quantity Wood Report',
-            state: 'home.lowquantityreport',
+            state: 'home.woodlow',
             type: 'link',
             icon: 'fa fa-map-marker'
            }]

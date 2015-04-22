@@ -22,14 +22,14 @@
             <input type="text" required
                    ng-model="vm.newTool.TOOL_DESC">
           </md-input-container>
-          <md-select ng-model="vm.toolType" ng-change="vm.setToolType(vm.toolType)" flex
+          <md-select ng-model="vm.toolType" ng-change="vm.setToolType(vm.toolType)" required flex
                      placeholder="Tool Type">
             <md-option ng-value="type" ng-repeat="type in vm.toolTypes">{{type}}</md-option>
 
 
           </md-select>
 
-          <md-select ng-model="vm.newTool.LOCATION_ID"  flex
+          <md-select ng-model="vm.newTool.LOCATION_ID" required flex
                      placeholder="Tool Location">
             <md-option ng-value="location.LOCATION_ID" ng-repeat="location in vm.locations">{{location.LOCATION_NAME}} -
               {{location.LOCATION_DESC}}
