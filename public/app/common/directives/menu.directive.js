@@ -84,7 +84,7 @@
 
         var sections = [{
           name: 'Getting Started',
-          state: 'retirement.category({category: \'GettingStarted\'})',
+          state: 'home.gettingstarted',
           type: 'link'
         }];
 

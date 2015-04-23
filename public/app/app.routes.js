@@ -40,6 +40,15 @@
               controller: 'HomeCtrl as vm'
             }
           }
+        }).state('home.gettingstarted', {
+          url: 'home/gettingstarted',
+
+          views: {
+
+            'reports@home': {
+              templateUrl: 'app/home/getting_started.view.html'
+            }
+          }
         })
         .state('home.tool', {
           url: 'tool',
