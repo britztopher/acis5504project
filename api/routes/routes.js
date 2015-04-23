@@ -1,8 +1,7 @@
 var multer = require('multer');
 var bodyParser = require('body-parser'),
     path = require('path'),
-    query_controller = require('../controllers/index'),
-    toolCtrl= require('../controllers/toolCtrl');
+    query_controller = require('../controllers/index');
 
 module.exports = function (app, db_pool) {
 
