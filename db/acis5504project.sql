@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2015 at 02:51 PM
+-- Generation Time: Apr 27, 2015 at 03:52 AM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -111,7 +111,7 @@ INSERT INTO `TOOL` (`TOOL_ID`, `TOOL_NAME`, `TOOL_DESC`, `TOOL_TYPE_ID`, `TOOL_Q
 CREATE TABLE `TOOL_TYPE` (
 `TOOL_TYPE_ID` int(11) NOT NULL,
   `TOOL_TYPE` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `TOOL_TYPE`
@@ -119,7 +119,15 @@ CREATE TABLE `TOOL_TYPE` (
 
 INSERT INTO `TOOL_TYPE` (`TOOL_TYPE_ID`, `TOOL_TYPE`) VALUES
 (1, 'POWER'),
-(2, 'HAND');
+(2, 'HAND'),
+(3, 'Nuematic'),
+(4, 'Air'),
+(5, 'Horse Drawn'),
+(6, 'Gas Powered'),
+(7, 'Solar'),
+(8, 'Wind'),
+(9, 'WATER'),
+(10, 'HEAT\r\n');
 
 -- --------------------------------------------------------
 
@@ -137,7 +145,7 @@ CREATE TABLE `WOOD` (
   `WOOD_QUANTITY` int(11) NOT NULL,
   `LOCATION_ID` int(11) NOT NULL,
   `SHOP_ID` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `WOOD`
@@ -150,7 +158,10 @@ INSERT INTO `WOOD` (`WOOD_ID`, `WOOD_LENGTH`, `WOOD_WIDTH`, `WOOD_THICKNESS`, `W
 (9, 5.00, 3.00, 0.75, 2.00, 3, 4, 15, 1),
 (10, 1.50, 3.00, 0.75, 3.00, 3, 8, 16, 1),
 (11, 4.00, 6.00, 1.00, 3.99, 6, 2, 13, 1),
-(12, 10.00, 12.00, 1.00, 10.00, 3, 2, 13, 1);
+(12, 10.00, 12.00, 1.00, 10.00, 3, 2, 13, 1),
+(15, 3.00, 5.00, 0.75, 2.00, 10, 4, 6, 1),
+(16, 5.00, 10.00, 1.00, 3.00, 12, 4, 13, 1),
+(17, 9.00, 6.00, 0.75, 1.99, 9, 10, 15, 1);
 
 -- --------------------------------------------------------
 
@@ -161,7 +172,7 @@ INSERT INTO `WOOD` (`WOOD_ID`, `WOOD_LENGTH`, `WOOD_WIDTH`, `WOOD_THICKNESS`, `W
 CREATE TABLE `WOOD_TYPE` (
 `WOOD_TYPE_ID` int(11) NOT NULL,
   `WOOD_TYPE` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `WOOD_TYPE`
@@ -173,7 +184,13 @@ INSERT INTO `WOOD_TYPE` (`WOOD_TYPE_ID`, `WOOD_TYPE`) VALUES
 (3, 'RED OAK'),
 (4, 'HICKORY'),
 (5, 'RED CEDAR'),
-(6, 'SYCAMORE');
+(6, 'SYCAMORE'),
+(7, 'WALNUT'),
+(8, 'WHITE CEDAR'),
+(9, 'BALTIC BIRCH'),
+(10, 'WHITE BIRCH'),
+(11, 'ASH'),
+(12, 'SEPELE\r\n');
 
 --
 -- Indexes for dumped tables
@@ -238,17 +255,17 @@ MODIFY `TOOL_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 -- AUTO_INCREMENT for table `TOOL_TYPE`
 --
 ALTER TABLE `TOOL_TYPE`
-MODIFY `TOOL_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `TOOL_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `WOOD`
 --
 ALTER TABLE `WOOD`
-MODIFY `WOOD_ID` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `WOOD_ID` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `WOOD_TYPE`
 --
 ALTER TABLE `WOOD_TYPE`
-MODIFY `WOOD_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `WOOD_TYPE_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --
